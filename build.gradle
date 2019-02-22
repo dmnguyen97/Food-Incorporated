@@ -27,10 +27,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-	//implementation ("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
 	implementation "org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"
 	compile 'org.flywaydb:flyway-core:5.2.1'
-	//compile("org.springframework:spring-jdbc")
 	compile("org.springframework.data:spring-data-jdbc")
 	compile("com.h2database:h2")
 	implementation 'org.springframework.boot:spring-boot-starter-web'

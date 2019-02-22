@@ -1,8 +1,11 @@
+server.port: 8080
 spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/postgres?currentSchema=foodinc
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  profiles:
+    active: ${cluster_env}
   flyway:
     schemas: foodinc
-datasource:
-  url: jdbc:postgresql://developer:mysecretpassword@db/foodinc
-  username: developer
-  password: mysecretpassword
-  driver-class-name: org.postgresql.Driver
