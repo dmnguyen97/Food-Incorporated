@@ -26,6 +26,5 @@ RUN sudo update-ca-certificates && \
 
 RUN apt-get install -y curl
 
-
 ENV GRADLE_HOME /opt/gradle-4.10.2
 ENV PATH $PATH:/opt/gradle-4.10.2/bin

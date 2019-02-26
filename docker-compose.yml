@@ -1,4 +1,4 @@
-version: '2'
+version: '3.5'
 services:
   local:
     container_name: local
@@ -20,6 +20,8 @@ services:
      - db
     working_dir: /app
     command: bash -c 'bash'
+    networks:
+      - foodnetwork
   db:
     image: postgres:9.4
     container_name: postgres
@@ -32,6 +34,12 @@ services:
       - postgres_db:/var/lib/postgresql/data/case_data
     ports:
       - "5440:5432"
+    networks:
+      - foodnetwork
+networks:
+  foodnetwork:
+    external: true
+    name: food_inc_network
 volumes:
   postgres_db:
   gradle_cache:
