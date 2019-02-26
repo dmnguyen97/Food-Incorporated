@@ -3,8 +3,8 @@ FROM ubuntu:14.04
 # For install steps
 USER root
 
-RUN apt-get update \
-    && apt-get upgrade \
+RUN apt-get update -y \
+    && apt-get upgrade -y \
     && apt-get dist-upgrade \
     && apt-get install --no-install-recommends \
       --no-install-suggests -y software-properties-common \
