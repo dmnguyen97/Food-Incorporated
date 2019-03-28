@@ -2,13 +2,14 @@ version: '2'
 services:
   local:
     container_name: local
-#    build: TODO: WHAT GOES HERE?
+    build: .
     stdin_open: true
+
     volumes:
       - .:/app
       - gradle_cache:/root/.gradle
     ports:
-      - "8082:8082"
+      - "8080:8080"
       - "5005:5005"
     environment:
       cluster_env: 'LOCAL'
@@ -20,6 +21,7 @@ services:
       - db
     working_dir: /app
     command: bash -c 'bash'
+
   db:
     image: postgres:9.4
     container_name: postgres
@@ -27,10 +29,11 @@ services:
       PGDATA: /var/lib/postgresql/data/case_data
       POSTGRES_USER: developer
       POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: foodinc
     volumes:
       - postgres_db:/var/lib/postgresql/data/case_data
     ports:
       - "5440:5432"
 volumes:
-#  TODO: WHAT GOES HERE?
+  postgres_db:
   gradle_cache:
