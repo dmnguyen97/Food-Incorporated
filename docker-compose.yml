@@ -4,7 +4,6 @@ services:
     container_name: local
     build: .
     stdin_open: true
-
     volumes:
       - .:/app
       - gradle_cache:/root/.gradle
