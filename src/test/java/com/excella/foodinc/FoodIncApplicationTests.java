@@ -1,7 +1,9 @@
 package com.excella.foodinc;
 
+import com.excella.foodinc.controller.FoodController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -17,6 +19,9 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class FoodIncApplicationTests {
+
+	@Autowired
+	FoodController foodController;
 
 	@MockBean
 	private FoodService foodService;
